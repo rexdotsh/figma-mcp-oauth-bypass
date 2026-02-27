@@ -24,16 +24,22 @@ No dependencies. Works with Bun or Node 18+.
 
 ## [OpenCode](https://github.com/anomalyco/opencode)
 
-Add this to your `opencode.json`:
+Add the Figma MCP server to your `opencode.json` config:
 
 ```json
-"figma": {
-  "type": "remote",
-  "url": "https://mcp.figma.com/mcp"
+{
+  "mcp": {
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
 }
 ```
 
-The script handles the rest. Tokens and client credentials go into [`~/.local/share/opencode/mcp-auth.json`](https://github.com/anomalyco/opencode/blob/1d9f05e4f5cdda1d1aa9675444ee83c57ae9951e/packages/opencode/src/mcp/auth.ts#L32). Refresh is automatic.
+This goes in your [OpenCode config](https://opencode.ai/docs/config/) — run `opencode debug paths` to find it.
+
+Then run the script. Tokens go into [`~/.local/share/opencode/mcp-auth.json`](https://github.com/anomalyco/opencode/blob/1d9f05e4f5cdda1d1aa9675444ee83c57ae9951e/packages/opencode/src/mcp/auth.ts#L32).
 
 ## Other clients
 
